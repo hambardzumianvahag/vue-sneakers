@@ -17,6 +17,8 @@ import Sneakers from './Sneakers.vue'
             </section>
             <section>
                 <Sneakers />
+            </section>
+            <section>
                 <Pagination />
             </section>
         </main>
