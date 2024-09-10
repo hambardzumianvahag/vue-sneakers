@@ -23,8 +23,8 @@ export default {
   currentPage(state, page) {
     state.currentPage = page;
   },
-  setIsLoading(state) {
-    state.isLoading = false;
+  setIsLoading(state, isLoading) {
+    state.isLoading = isLoading;
   },
   setTotalPages(state, totalPages) {
     state.totalPages = totalPages;

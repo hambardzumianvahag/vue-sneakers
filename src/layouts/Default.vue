@@ -25,7 +25,7 @@ const loading = computed(() => store.getters.getIsLoading)
             <section>
                 <Sneakers />
             </section>
-            <section v-if="!loading.value">
+            <section v-if="!loading">
                 <Pagination />
             </section>
         </main>

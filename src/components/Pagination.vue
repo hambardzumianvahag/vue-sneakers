@@ -21,7 +21,7 @@ const changePage = (page) => {
     <div class="flex justify-center items-center bg-gray-200">
         <div class="bg-gray-200 p-5 shadow-2xl">
             <button v-for="pageNumber in pages" :key="pageNumber"
-                class="text-[#9B9B9B] py-2  px-5 text-xl cursor-pointer shadow-inner bg-gray-200 m-1 border border-solid border-[#d8d6d6] rounded-xl"
+                class="text-[#9B9B9B] md:py-2  md:px-5 px-2.5 py-1 text-xl cursor-pointer shadow-inner bg-gray-200 m-1 border border-solid border-[#d8d6d6] rounded-xl"
                 :class="{ 'bg-blue-500 text-black': currentPage === pageNumber }" @click="changePage(pageNumber)">
                 {{ pageNumber }}
             </button>

@@ -1,10 +1,15 @@
 <script setup>
-import { computed, ref } from 'vue'
+import { computed, ref, Transition, watch } from 'vue'
 import { useStore } from 'vuex'
 import Bracket from './Bracket.vue';
 
 const store = useStore()
 const balance = computed(() => store.getters.getBalance)
+
+watch(() => balance => {
+    localStorage.setItem('balance', JSON.stringify(balance))
+})
+
 const showModal = ref(false)
 </script>
 
@@ -34,6 +39,27 @@ const showModal = ref(false)
                 <p>Профиль</p>
             </div>
         </div>
-        <Bracket :isVisible="showModal" @update:isVisible="showModal = $event" />
+        <Transition>
+            <Bracket :isVisible="showModal" @update:isVisible="showModal = $event" />
+        </Transition>
     </div>
 </template>
+
+<style scoped>
+.v-enter-active,
+.v-leave-active {
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.v-enter-from,
+.v-leave-to {
+    opacity: 0;
+    transform: translateX(100%);
+}
+
+.v-enter-to,
+.v-leave-from {
+    opacity: 1;
+    transform: translateX(0);
+}
+</style>

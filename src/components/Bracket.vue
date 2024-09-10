@@ -13,6 +13,9 @@ const selectedSneakers = computed(() => store.getters.allSelectedSneakers)
 const balance = computed(() => store.getters.getBalance)
 const emit = defineEmits(['update:isVisible'])
 
+
+
+
 const removeBalance = (sneaker) => {
     store.dispatch('removeSneaker', sneaker);
 };
@@ -70,7 +73,7 @@ const afterConfirm = () => {
                     <div
                         class="border  border-solid border-[#F3F3F3] rounded-[40px] mt-5 md:px-[20px] p-5 flex justify-between items-center gap-[21px]">
                         <div>
-                            <img src="../assets/img/sneaker.webp" alt="sneaker" class="w-[133px]">
+                            <img :src="sneaker.imageUrl" alt="sneaker" class="w-[133px]">
                         </div>
                         <div>
                             <p class="py-[14px] text-sm">{{ sneaker.title }}</p>
