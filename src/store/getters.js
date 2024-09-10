@@ -16,4 +16,10 @@ export default {
   getPage(state) {
     return state.currentPage;
   },
+  getIsLoading(state) {
+    return state.isLoading;
+  },
+  getTotalPages(state) {
+    return state.totalPages;
+  },
 };

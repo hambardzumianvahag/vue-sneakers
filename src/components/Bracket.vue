@@ -56,7 +56,7 @@ const afterConfirm = () => {
             <h2 class="font-bold text-2xl">Корзина</h2>
             <div v-if="selectedSneakers.length === 0 && !success">
                 <div class="flex flex-col justify-center items-center pt-[109px]">
-                    <img src="../img/empty.png" alt="empty">
+                    <img src="../assets/img/empty.png" alt="empty">
                     <h2 class="font-semibold text-[22px] mt-[21px] mb-[9px]">Корзина пустая</h2>
                     <p class="text-center text-[#9B9B9B]">Добавьте хотя бы одну пару кроссовок, чтобы сделать заказ.</p>
                     <button @click="close"
@@ -68,9 +68,9 @@ const afterConfirm = () => {
             <div v-else-if="!success">
                 <div v-for="sneaker in selectedSneakers" :key="sneaker.id">
                     <div
-                        class="border animate-pulse border-solid border-[#F3F3F3] rounded-[40px] mt-5 md:px-[20px] p-5 flex justify-between items-center gap-[21px]">
+                        class="border  border-solid border-[#F3F3F3] rounded-[40px] mt-5 md:px-[20px] p-5 flex justify-between items-center gap-[21px]">
                         <div>
-                            <img src="../img/sneaker.webp" alt="sneaker" class="w-[133px]">
+                            <img src="../assets/img/sneaker.webp" alt="sneaker" class="w-[133px]">
                         </div>
                         <div>
                             <p class="py-[14px] text-sm">{{ sneaker.title }}</p>
@@ -79,7 +79,7 @@ const afterConfirm = () => {
                                     <p class="text-sm font-bold">{{ sneaker.price }} Руб․</p>
                                 </div>
                                 <div>
-                                    <img class="cursor-pointer" src="../img/close-icon.png" alt="close"
+                                    <img class="cursor-pointer" src="../assets/img/close-icon.png" alt="close"
                                         @click="removeBalance(sneaker)">
                                 </div>
                             </div>
@@ -106,7 +106,7 @@ const afterConfirm = () => {
             </div>
             <div v-else>
                 <div class="flex flex-col justify-center items-center pt-[109px]">
-                    <img src="../img/success.png" alt="success">
+                    <img src="../assets/img/success.png" alt="success">
                     <h2 class="font-semibold text-[22px] mt-[21px] mb-[9px] text-[#9DD458]">Заказ оформлен!</h2>
                     <p class="text-center text-[#9B9B9B]">Ваш заказ #18 скоро будет передан курьерской доставке</p>
                     <button @click="afterConfirm"
